@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabla de Ventas con Carrito</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Estilos CSS adicionales */
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+}
+h2 {
+margin-top: 20px;
+text-align: center;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 20px;
+}
+th, td {
+padding: 8px;
+border: 1px solid #ddd;
+text-align: left;
+}
+th {
+background-color: #f2f #f2f2f2;
+}
+tr:hover {
+background-color: #f5f5f5;
+}
+input[type="text"] {
+width: 100%;
+padding: 8px;
+margin-bottom: 10px;
+box-sizing: border-box;
+}
+button{
+display: block;
+width: 100%;
+padding: 10px;
+background-color: #4CAF50;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+button:hover {
+background-color: #45a049;
+}
+#carrito {
+overflow-x: auto; /* Hace que la tabla sea desplazable horizontalmente en dispositivos pequeños */
+}
+</style>
+</head>
+<body>
+
+<h2>tienda de  herbolaria</h2>
+
+<input type="text" id="busqueda" placeholder="Buscar..." onkeyup="buscar()">
+</ul>
+</ul>
+<ul><a href="index.html">REGRESAR A INICIO</a></ul>
+<BR></BR>
+<ul><a href="HTML-1.html">HERBOLARIA</a></ul>
+
+<ul><a href="HTML-3.html">GASTRONOMIA</a></ul>
+
+<ul><a href="HTML-2.html">ARTEZANIAS</a></ul>
+</ul>
+
+<div style="overflow-x:auto;">
+<table id="miTabla">
+<thead>
+<tr>
+<th>Producto</th>
+<th>Descripcion</th>
+<th>Precio</th>
+<th>Unidades en Existencia</th>
+<th>Accion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="herbolaria/1 romero.jpg" alt="Producto 1"> Romero</td>
+<td>romero 
+    el romero es una planta medicinal que sirve para el dolor de panza lo puedes agregar atus comidas
+</td>
+<td>15</td>
+<td>20</td>
+<td><button onclick="agregarAlCarrito (1)">Agregar al Carrito</button></td>
+</tr>
+<tr>
+<td><img src="herbolaria/2 ruda.jpg" alt="Producto 2"> Ruda</td>
+<td>Ruda
+    la ruda es una planta medicinal que sirve para que no te agarre aire
+</td>
+<td>20</td>
+<td>15</td>
+<td><button onclick="agregarAlCarrito (2)">Agregar al Carrito</button></td>
+</tr>
+<tr>
+<td><img src="herbolaria/3 maiz.jpg" alt="Producto 3"> Maiz</td>
+<td>Maiz
+    El maiz es una planta que sirve como comida para tener una buena alimentacion
+</td>
+<td>15</td>
+<td>20</td>
+<td><button onclick="agregarAlCarrito (3)">Agregar al Carrito</button></td>
+</tr>
+<tr>
+<td><img src="herbolaria/4 raiz.jpg" alt="Producto 4"> Raiz </td>
+<td>Raiz 
+    la raiz sirve para limpiar los riñones y tener una buna digestion 
+</td>
+<td>15</td>
+<td>20</td>
+<td><button onclick="agregarAlCarrito (4)">Agregar al Carrito</button></td>
+</tr>
+<tr>
+    <td><img src="herbolaria/5 lirio acuatico.jpg" alt="Producto 5"> Lirio acuatico </td>
+    <td>lirio acuatico
+        el lirio acuatico sirve para controlar el dolor de cabeza y los dolores del cuerpo
+    </td>
+    <td>15</td>
+    <td>20</td>
+    <td><button onclick="agregarAlCarrito (5)">Agregar al Carrito</button></td>
+    </tr>
+    <tr>
+        <td><img src="herbolaria/6 hepsote de perro.jpg" alt="Producto 6"> Hepazote de Perro  </td>
+        <td>Hepazote de perro 
+            esta planta de medicinal sirve como tesito para la buena circulacion de sangre
+        </td>
+        <td>15</td>
+        <td>20</td>
+        <td><button onclick="agregarAlCarrito (6)">Agregar al Carrito</button></td>
+        </tr>
+        <tr>
+            <td><img src="herbolaria/7 sabila.jpg" alt="Producto 7"> Sabila </td>
+            <td>Sabila
+                la savila sirve para lastimadas y rosaduras tambien como medicamento para tu cabello
+            </td>
+            <td>15</td>
+            <td>20</td>
+            <td><button onclick="agregarAlCarrito (7)">Agregar al Carrito</button></td>
+            </tr>
+            <tr>
+                <td><img src="herbolaria/8 hierva buena.jpg" alt="Producto 8"> Hierba  Buena </td>
+                <td>Hierba buena 
+                    la hierba buena sirve  descontipar la naris y para la tos seca 
+                </td>
+                <td>15</td>
+                <td>20</td>
+                <td><button onclick="agregarAlCarrito (8)">Agregar al Carrito</button></td>
+                </tr>
+                <tr>
+                    <td><img src="herbolaria/9 pirul.jpg" alt="Producto 9"> Pirul </td>
+                    <td>Pirul
+                        el pirul sirve para los sintomas de gripa y bomito
+                    </td>
+                    <td>15</td>
+                    <td>20</td>
+                    <td><button onclick="agregarAlCarrito (9)">Agregar al Carrito</button></td>
+                    </tr>
+
+<!-- Agrega mas filas segin necesites -->
+</tbody>
+</table>
+</div>
+
+<h2>Carrito</h2>
+<div style="overflow-x:auto;">
+<table id="carrito">
+<thead>
+<tr>
+<th>Producto</th>
+<th>Descripcion</th>
+<th>Precio</th>
+<th>Cantidad</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody id="carrito-body">
+<!-- Filas de productos en el carrito-->
+</tbody>
+<tfoot>
+<tr>
+<td colspan="4" style="text-align: right; ">Total:</td>
+<td id="total-carrito"></td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<button onclick="abrirVentanaPago()">Pagar</button>
+
+<script src="script.js"></script>
+</body>
+</html>

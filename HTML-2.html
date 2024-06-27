@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabla de Ventas con Carrito</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Estilos CSS adicionales */
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+}
+h2 {
+margin-top: 20px;
+text-align: center;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 20px;
+}
+th, td {
+padding: 8px;
+border: 1px solid #ddd;
+text-align: left;
+}
+th {
+background-color: #f2f #f2f2f2;
+}
+tr:hover {
+background-color: #f5f5f5;
+}
+input[type="text"] {
+width: 100%;
+padding: 8px;
+margin-bottom: 10px;
+box-sizing: border-box;
+}
+button{
+display: block;
+width: 100%;
+padding: 10px;
+background-color: #4CAF50;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+button:hover {
+background-color: #45a049;
+}
+#carrito {
+overflow-x: auto; /* Hace que la tabla sea desplazable horizontalmente en dispositivos pequeños */
+}
+</style>
+</head>
+<body>
+
+<h2>tienda de  artezanias</h2>
+
+<input type="text" id="busqueda" placeholder="Buscar..." onkeyup="buscar()">
+</ul>
+</ul>
+<ul><a href="index.html">REGRESAR A INICIO</a></ul>
+<BR></BR>
+<ul><a href="HTML-1.html">HERBOLARIA</a></ul>
+
+<ul><a href="HTML-3.html">GASTRONOMIA</a></ul>
+<ul><a href="HTML-2.html">ARTEZANIAS</a></ul>
+</ul>
+
+<div style="overflow-x:auto;">
+<table id="miTabla">
+<thead>
+<tr>
+<th>Producto</th>
+<th>Descripcion</th>
+<th>Precio</th>
+<th>Unidades en Existencia</th>
+<th>Accion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="artesanias/1 sombrero.jpg" alt="Producto 1"> Sombrero</td>
+<td>El Sombrero 
+    el Sombrero es alguna palnta medicinal
+</td>
+<td>15</td>
+<td>20</td>
+<td><button onclick="agregarAlCarrito (1)">Agregar al Carrito</button></td>
+</tr>
+<tr>
+<td><img src="artesanias/2 gaban.jpg" alt="Producto 2"> Gaban</td>
+<td>Gaban 
+    la Gaban es umna planta amargoza con fines medicinales
+</td>
+<td>20</td>
+<td>15</td>
+<td><button onclick="agregarAlCarrito (2)">Agregar al Carrito</button></td>
+</tr>
+<tr>
+<td><img src="artesanias/3 molcajete.jpg" alt="Producto 3"> Molcagete</td>
+<td>Molcagete 
+    el Molcagete es ua planta para comida es saludable y es importante
+</td>
+<td>15</td>
+<td>20</td>
+<td><button onclick="agregarAlCarrito (3)">Agregar al Carrito</button></td>
+</tr>
+<tr>
+<td><img src="artesanias/4 servilleta.jpg" alt="Producto 4"> Servilletas </td>
+<td>los Servilletas 
+    la Servilletas es una planta inportante ya que se usa en tes
+</td>
+<td>15</td>
+<td>20</td>
+<td><button onclick="agregarAlCarrito (4)">Agregar al Carrito</button></td>
+</tr>
+<tr>
+    <td><img src="artesanias/5 tapetes.jpg" alt="Producto 5"> Tapetes </td>
+    <td>los Tapetes 
+        la Tapetes es una planta inportante ya que se usa en tes
+    </td>
+    <td>15</td>
+    <td>20</td>
+    <td><button onclick="agregarAlCarrito (5)">Agregar al Carrito</button></td>
+    </tr>
+    <tr>
+        <td><img src="artesanias/6 fajas.jpg" alt="Producto 6"> fajas </td>
+        <td>los fajas 
+            la fajas es una planta inportante ya que se usa en tes
+        </td>
+        <td>15</td>
+        <td>20</td>
+        <td><button onclick="agregarAlCarrito (6)">Agregar al Carrito</button></td>
+        </tr>
+        <tr>
+            <td><img src="artesanias/7 cobijas.jpg" alt="Producto 7"> cobijas </td>
+            <td>los cobijas 
+                la cobijas es una planta inportante ya que se usa en tes
+            </td>
+            <td>15</td>
+            <td>20</td>
+            <td><button onclick="agregarAlCarrito (7)">Agregar al Carrito</button></td>
+            </tr>
+            <tr>
+                <td><img src="artesanias/8 cojines.jpg" alt="Producto 8"> cojines </td>
+                <td>los cojines 
+                    la cojines es una planta inportante ya que se usa en tes
+                </td>
+                <td>15</td>
+                <td>20</td>
+                <td><button onclick="agregarAlCarrito (8)">Agregar al Carrito</button></td>
+                </tr>
+                <tr>
+                    <td><img src="artesanias/9 mantas.jpg" alt="Producto 9"> mantas </td>
+                    <td>los mantas 
+                        la mantas es una planta inportante ya que se usa en tes
+                    </td>
+                    <td>15</td>
+                    <td>20</td>
+                    <td><button onclick="agregarAlCarrito (9)">Agregar al Carrito</button></td>
+                    </tr>
+
+<!-- Agrega mas filas segin necesites -->
+</tbody>
+</table>
+</div>
+
+<h2>Carrito</h2>
+<div style="overflow-x:auto;">
+<table id="carrito">
+<thead>
+<tr>
+<th>Producto</th>
+<th>Descripcion</th>
+<th>Precio</th>
+<th>Cantidad</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody id="carrito-body">
+<!-- Filas de productos en el carrito-->
+</tbody>
+<tfoot>
+<tr>
+<td colspan="4" style="text-align: right; ">Total:</td>
+<td id="total-carrito"></td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<button onclick="abrirVentanaPago()">Pagar</button>
+
+<script src="script.js"></script>
+</body>
+</html>
